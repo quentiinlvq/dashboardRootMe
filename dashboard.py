@@ -1,3 +1,4 @@
+import time
 import requests
 from bs4 import BeautifulSoup
 
@@ -37,6 +38,8 @@ def process_user_list(usernames):
         data = get_user_data(username)
         if data:
             user_data_list.append(data)
+
+        time.sleep(1.1)
 
     return user_data_list
 
