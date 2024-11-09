@@ -82,15 +82,18 @@ def generate_html_table(user_data_list):
         <h2>Scores des Utilisateurs</h2>
         <table>
             <tr>
+                <th>Rang</th>
                 <th>Utilisateur</th>
                 <th>Place</th>
                 <th>Points</th>
             </tr>
     """
 
-    for user_data in user_data_list:
+    for idx, user_data in enumerate(user_data_list):
+        rank = idx + 1
         html += f"""
         <tr>
+            <td>{rank}</td>
             <td>{user_data['Username']}</td>
             <td>{user_data['Place']}</td>
             <td>{user_data['Points']}</td>
