@@ -1,4 +1,6 @@
 import time
+import webbrowser
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -109,7 +111,10 @@ def generate_html_table(user_data_list):
 
 html_table = generate_html_table(user_data_list_sorted)
 
-with open("user_scores.html", "w") as file:
+file_path = "user_scores.html"
+with open(file_path, "w") as file:
     file.write(html_table)
+
+webbrowser.open(file_path)
 
 print("Tableau HTML généré et sauvegardé sous 'user_scores.html'")
